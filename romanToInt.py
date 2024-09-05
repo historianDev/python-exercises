@@ -1,8 +1,38 @@
-"""
- * Escribe un programa que muestre por consola (con un print) los
- * números de 1 a 100 (ambos incluidos y con un salto de línea entre
- * cada impresión), sustituyendo los siguientes:
- * - Múltiplos de 3 por la palabra "fizz".
- * - Múltiplos de 5 por la palabra "buzz".
- * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
-"""
+class Solution(object):
+    def romanToInt(self, symbol: str):
+        # dictionariy with roman number and its respective value
+        roman_values = {
+            "I": 1,
+            "V": 5,
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500,
+            "M": 1000
+        }
+
+# reverse the string
+        integer = 0
+        last = "I"
+
+        for i in symbol[::-1]:
+            if roman_values[i] < roman_values[last]:
+                integer -= roman_values[i]
+            else:
+                integer += roman_values[i]
+            last = i
+
+        return integer
+
+    def print_number(self, ):
+        roman = input('enter the roman number you want to translate: ')
+        symbol = roman
+        return symbol
+
+
+my_solution = Solution()  # Create an instance of the Solution class
+# Call the romanToInt method on the created instance
+# Call the print_number() function
+symbol = my_solution.print_number()
+my_number = my_solution.romanToInt(symbol)
+print(my_number)  # Print the result
