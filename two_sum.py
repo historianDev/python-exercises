@@ -23,7 +23,7 @@ class Solution(object):
 
 # Solution2: Dictionary storage
 
-class Solutiontwo(object):
+class SolutionTwo(object):
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         seen = {}
 
